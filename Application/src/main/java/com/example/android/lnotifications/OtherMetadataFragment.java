@@ -17,7 +17,6 @@
 package com.example.android.lnotifications;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -30,6 +29,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -179,7 +180,7 @@ public class OtherMetadataFragment extends Fragment {
      */
     //@VisibleForTesting
     Notification createNotification(Priority priority, Category category, Uri contactUri) {
-        Notification.Builder notificationBuilder = new Notification.Builder(getActivity())
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(getActivity())
                 .setContentTitle("Notification with other metadata")
                 .setSmallIcon(R.drawable.ic_launcher_notification)
                 .setPriority(priority.value)

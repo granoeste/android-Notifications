@@ -1,6 +1,6 @@
 package com.example.android.lnotifications;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.test.ActivityInstrumentationTestCase2;
 
 /**
@@ -27,23 +27,23 @@ public class LNotificationActivityTest extends
     }
 
     public void testFirstTabInActionBarIsHeadsUpNotificationFragment() {
-        mActivity.getActionBar().setSelectedNavigationItem(0);
+        mActivity.getSupportActionBar().setSelectedNavigationItem(0);
         getInstrumentation().waitForIdleSync();
-        Fragment fragment = mActivity.getFragmentManager().findFragmentById(R.id.container);
+        Fragment fragment = mActivity.getSupportFragmentManager().findFragmentById(R.id.container);
         assertTrue(fragment instanceof HeadsUpNotificationFragment);
     }
 
     public void testSecondtabInActionBarIsVisibilityMetadataFragment() {
-        mActivity.getActionBar().setSelectedNavigationItem(1);
+        mActivity.getSupportActionBar().setSelectedNavigationItem(1);
         getInstrumentation().waitForIdleSync();
-        Fragment fragment = mActivity.getFragmentManager().findFragmentById(R.id.container);
+        Fragment fragment = mActivity.getSupportFragmentManager().findFragmentById(R.id.container);
         assertTrue(fragment instanceof VisibilityMetadataFragment);
     }
 
     public void testThirdtabInActionBarIsOtherMetadataFragment() {
-        mActivity.getActionBar().setSelectedNavigationItem(2);
+        mActivity.getSupportActionBar().setSelectedNavigationItem(2);
         getInstrumentation().waitForIdleSync();
-        Fragment fragment = mActivity.getFragmentManager().findFragmentById(R.id.container);
+        Fragment fragment = mActivity.getSupportFragmentManager().findFragmentById(R.id.container);
         assertTrue(fragment instanceof OtherMetadataFragment);
     }
 }

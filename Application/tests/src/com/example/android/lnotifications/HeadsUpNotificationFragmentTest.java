@@ -24,7 +24,7 @@ public class HeadsUpNotificationFragmentTest extends
         // {@link LNotificationActivityTest}.
         mActivity.getActionBar().setSelectedNavigationItem(0);
         getInstrumentation().waitForIdleSync();
-        mFragment = (HeadsUpNotificationFragment) mActivity.getFragmentManager()
+        mFragment = (HeadsUpNotificationFragment) mActivity.getSupportFragmentManager()
                 .findFragmentById(R.id.container);
     }
 

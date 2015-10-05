@@ -16,23 +16,23 @@
 
 package com.example.android.lnotifications;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Launcher Activity for the L Notification samples application.
  */
-public class LNotificationActivity extends Activity {
+public class LNotificationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
         setTitle(R.string.title_lnotification_activity);
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
 
         // Use ViewPager in the support library where possible.
         // At this time, the support library for L is not ready so using the deprecated method

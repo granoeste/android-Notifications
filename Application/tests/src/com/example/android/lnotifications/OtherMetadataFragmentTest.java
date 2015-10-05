@@ -5,11 +5,6 @@ import android.app.Notification;
 import android.content.Intent;
 import android.net.Uri;
 import android.test.ActivityInstrumentationTestCase2;
-import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Unit tests for {@link OtherMetadataFragment}.
@@ -30,9 +25,9 @@ public class OtherMetadataFragmentTest extends
         mActivity = getActivity();
         // The third tab should be {@link OtherMetadataFragment}, that is tested in the
         // {@link LNotificationActivityTest}.
-        mActivity.getActionBar().setSelectedNavigationItem(2);
+        mActivity.getSupportActionBar().setSelectedNavigationItem(2);
         getInstrumentation().waitForIdleSync();
-        mFragment = (OtherMetadataFragment) mActivity.getFragmentManager()
+        mFragment = (OtherMetadataFragment) mActivity.getSupportFragmentManager()
                 .findFragmentById(R.id.container);
     }
 

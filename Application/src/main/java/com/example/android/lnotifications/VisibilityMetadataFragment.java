@@ -16,11 +16,12 @@
 
 package com.example.android.lnotifications;
 
-import android.app.Fragment;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -108,7 +109,7 @@ public class VisibilityMetadataFragment extends Fragment {
      */
     //@VisibleForTesting
     Notification createNotification(NotificationVisibility visibility) {
-        Notification.Builder notificationBuilder = new Notification.Builder(getActivity())
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(getActivity())
                 .setContentTitle("Notification for Visibility metadata");
 
         notificationBuilder.setVisibility(visibility.getVisibility());
