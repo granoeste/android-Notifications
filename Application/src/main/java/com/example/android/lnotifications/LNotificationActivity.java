@@ -32,24 +32,36 @@ public class LNotificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
         setTitle(R.string.title_lnotification_activity);
+
         ActionBar actionBar = getSupportActionBar();
 
         // Use ViewPager in the support library where possible.
         // At this time, the support library for L is not ready so using the deprecated method
         // to create tabs.
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+
         ActionBar.Tab tabHeadsUpNotification = actionBar.newTab().setText("Heads Up");
         ActionBar.Tab tabVisibilityMetadata = actionBar.newTab().setText("Visibility");
         ActionBar.Tab tabOtherMetadata = actionBar.newTab().setText("Others");
-        tabHeadsUpNotification.setTabListener(new FragmentTabListener(HeadsUpNotificationFragment
-                .newInstance()));
-        tabVisibilityMetadata.setTabListener(new FragmentTabListener(VisibilityMetadataFragment
-                .newInstance()));
-        tabOtherMetadata.setTabListener(new FragmentTabListener(OtherMetadataFragment.newInstance
-                ()));
+        ActionBar.Tab tabBasicNotification = actionBar.newTab().setText("Basic");
+        ActionBar.Tab tabCustomNotification = actionBar.newTab().setText("Custom");
+        ActionBar.Tab tabProgressNotification = actionBar.newTab().setText("Progress");
+
+        tabHeadsUpNotification.setTabListener(new FragmentTabListener(HeadsUpNotificationFragment.newInstance()));
+        tabVisibilityMetadata.setTabListener(new FragmentTabListener(VisibilityMetadataFragment.newInstance()));
+        tabOtherMetadata.setTabListener(new FragmentTabListener(OtherMetadataFragment.newInstance()));
+        tabBasicNotification.setTabListener(new FragmentTabListener(BasicNotificationFragment.newInstance()));
+        tabCustomNotification.setTabListener(new FragmentTabListener(CustomNotificationFragment.newInstance()));
+        tabProgressNotification.setTabListener(new FragmentTabListener(ProgressNotificationFragment.newInstance()));
+
         actionBar.addTab(tabHeadsUpNotification, 0);
         actionBar.addTab(tabVisibilityMetadata, 1);
         actionBar.addTab(tabOtherMetadata, 2);
+        actionBar.addTab(tabBasicNotification, 3);
+        actionBar.addTab(tabCustomNotification, 4);
+        actionBar.addTab(tabProgressNotification, 5);
+
     }
 
     /**

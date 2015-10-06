@@ -30,6 +30,23 @@ limitations under the License.
         You need to have your lockscreen secured(PIN, Pattern, or Password) if you don\'t want to
         show sensitive information on it.
     </string>
+    <string name="basic_description">
+        Tap the button below to send a notification.\n\nThe notification\'s icon will immediately
+        appear in the notification bar. Drag the notification bar open to see the full
+        notification. Depending on which version of Android you\'re running, the full
+        notification will display an icon and two or three lines of text.
+        \n\nTap the notification to execute the notification\'s \"action,\" which is an intent
+        that we associate with the notification when it\'s created. This sample notification\'s
+        action is to send a browse intent with the url of the Notification docs on
+        developer.android.com.
+        \n\nThis sample uses the NotificationCompat API for maximum compatibility with versions
+        of Android from Froyo (Android 2.2) to the present. Try it on devices or AVDs that are
+        running different versions of Android. You\'ll see that while the presentation varies
+        slightly, the basic functionality is the same. NotificationCompat automatically takes
+        advantage of the expanded notification format in newer versions of Android, and
+        falls back gracefully to a reduced set of functionality on earlier versions.
+    </string>
+
     <string name="visibility_public">Public</string>
     <string name="visibility_private">Private</string>
     <string name="visibility_secret">Secret</string>
@@ -40,4 +57,38 @@ limitations under the License.
     <string name="use_heads_up_notification_where_possible">Use Heads Up Notification when possible</string>
     <string name="label_category">Category</string>
     <string name="label_priority">Priority</string>
+
+    <string name="expanded">I\'m the expanded notification.\nCollapse me!</string>
+    <string name="collapsed">I\'m the collapsed notification.\nCreated at: %s</string>
+    <string name="custom_notification">I\'m a custom notification.</string>
+
+    <string name="custom_description">This sample demonstrates how a notification is created using the
+        <b>NotificationCompatBuilder</b>
+        with a custom content view. The layout of the notification is defined as a
+        layout resource and inflated as a <b>RemoteViews</b> object.
+        \n\nOn API level 16 and above, a different layout is inflated and set as
+        the <i>big content view</i>, which is used when the notification is expanded.
+        \n\n<b>Use the button below to create the notification.
+        \n\nIf your device is running Jelly Bean or above, try expanding or collapsing
+        the notification to see the different layouts.</b>
+    </string>
+    <string name="collapsed_image">A single Android robot waving. Symbolises a collapsed
+        notification.
+    </string>
+    <string name="expanded_image">Two Androids on top of each other. Symbolises an expanded
+        notification.
+    </string>
+
+    <string name="progress_description">
+        Notifications can include an animated progress indicator that shows users the status of
+        an ongoing operation. If you can estimate how long the operation takes and how much of
+        it is complete at any time, use the \"determinate\" form of the indicator (a progress bar).
+        \n\n
+        If you can\'t estimate the length of the operation, use the \"indeterminate\" form of
+        the indicator (an activity indicator).
+    </string>
+
+    <string name="dismiss">Dismiss</string>
+
+
 </resources>
